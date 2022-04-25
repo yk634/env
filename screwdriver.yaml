@@ -1,6 +1,6 @@
 shared:
   annotations:
-    screwdriver.cd/executor: docker
+    screwdriver.cd/executor: queue
 jobs:
   main:
     image: centos:centos7

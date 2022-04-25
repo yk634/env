@@ -1,6 +1,6 @@
 shared:
   annotations:
-    screwdriver.cd/executor: k8s
+    screwdriver.cd/executor: k8s-vm
 jobs:
   main:
     image: centos:centos7

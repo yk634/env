@@ -5,3 +5,4 @@ jobs:
     steps:
       - cpu: echo $CONTAINER_CPU_LIMIT
       - memory: echo $CONTAINER_MEMORY_LIMIT
+      - env: printenv

@@ -1,11 +1,25 @@
 shared:
+  image: centos:centos7
   annotations:
     screwdriver.cd/executor: k8s
+
 jobs:
-  main:
-    image: centos:centos7
+  micro:
+    annotations:
+      screwdriver.cd/cpu: MICRO
+      screwdriver.cd/ram: MICRO
     requires: [ ~commit, ~pr ]
     steps:
+      - printenv: printenv
       - cpu: echo $CONTAINER_CPU_LIMIT
       - memory: echo $CONTAINER_MEMORY_LIMIT
-      - env: printenv
+
+  low:
+    annotations:
+      screwdriver.cd/cpu: LOW
+      screwdriver.cd/ram: LOW
+    requires: [ ~commit, ~pr ]
+    steps:
+      - printenv: printenv
+      - cpu: echo $CONTAINER_CPU_LIMIT
+      - memory: echo $CONTAINER_MEMORY_LIMIT

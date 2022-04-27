@@ -4,10 +4,10 @@ shared:
     screwdriver.cd/executor: k8s
 
 jobs:
-  micro:
+  high:
     annotations:
-      screwdriver.cd/cpu: MICRO
-      screwdriver.cd/ram: MICRO
+      screwdriver.cd/cpu: HIGH
+      screwdriver.cd/ram: HIGH
     requires: [ ~commit, ~pr ]
     steps:
       - printenv: printenv
